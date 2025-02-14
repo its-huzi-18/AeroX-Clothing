@@ -31,7 +31,7 @@ const ImageCarousel = () => {
       <div className='overflow-hidden rounded-lg shadow-xl'>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index} className='relative h-[250px] md:h-[350px]'>
+            <div key={index} className='relative h-[250px] md:h-[400px]'>
               <Image
                 quality={100}
                 src={image}
