@@ -9,7 +9,7 @@ const HeroSection  = () =>{
 
   return (
     <div className='w-full  flex justify-center items-center my-2'>
-    <div className='w-full  lg:h-[600px] relative'>
+    <div className='w-full relative'>
       <ImageCarousel />
     </div>
 

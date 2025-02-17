@@ -38,7 +38,7 @@ const TopHeader = () => {
     <FaInstagram className="text-[21px]" />
   </div>
 </Link>
-<Link href={"/"} className="group relative w-7 h-7 flex justify-center items-center rounded-full transition-all duration-300">
+<Link href={"https://www.tiktok.com/@aeroxwear"} className="group relative w-7 h-7 flex justify-center items-center rounded-full transition-all duration-300">
   <div className="w-8 h-8 flex justify-center items-center rounded-full transition-all duration-300 group-hover:w-8 group-hover:h-8 group-hover:bg-slate-300">
     <FaTiktok className="text-[19px]" />
   </div>
