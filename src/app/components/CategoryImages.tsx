@@ -9,7 +9,7 @@ interface ImageSrcProps {
     width?:number;
     height?:number;
 }
-const CategoryImages: React.FC<ImageSrcProps> = ({ imageSrc,alt,width = 180,height = 180})=> {
+const CategoryImages: React.FC<ImageSrcProps> = ({ imageSrc,alt,width = 150,height = 150})=> {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -37,7 +37,7 @@ const CategoryImages: React.FC<ImageSrcProps> = ({ imageSrc,alt,width = 180,heig
             width={width ?? undefined} // Only pass if provided
             height={height ?? undefined}
             alt={alt}
-            className={`rounded-lg transition-opacity duration-300 ${
+            className={`rounded-lg transition-opacity duration-300 overflow-hidden ${
               isLoading ? "opacity-0" : "opacity-100"
               }`}
               onLoadingComplete={() => setIsLoading(false)}

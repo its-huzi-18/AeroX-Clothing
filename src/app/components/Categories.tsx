@@ -7,19 +7,21 @@ const Categories = () => {
     <h2 className="text-3xl font-semibold my-10">Shopping By Categories</h2>
     <div className="flex justify-center gap-8"> 
         <CategoryImages
- imageSrc='/Images/my t-shirt.png'
+ imageSrc='/Images/t-shirt.png'
  alt='t-shirt'        
         />
         <CategoryImages
- imageSrc='/Images/img3.png'
+ imageSrc='/Images/dropShoulder.png'
  alt='t-shirt'        
         />
         <CategoryImages
- imageSrc='/Images/img4.png'
- alt='t-shirt'        
+ imageSrc='/Images/uh.png'
+ alt='t-shirt'   
+ width={147}
+ height={147}   
         />
         <CategoryImages
- imageSrc='/Images/img5.png'
+ imageSrc='/Images/half-shirt.png'
  alt='t-shirt'        
         />
         <CategoryImages
