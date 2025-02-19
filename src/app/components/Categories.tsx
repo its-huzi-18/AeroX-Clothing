@@ -15,7 +15,7 @@ const Categories = () => {
  alt='t-shirt'        
         />
         <CategoryImages
- imageSrc='/Images/uh.png'
+ imageSrc='/Images/full-sleeves.png'
  alt='t-shirt'   
  width={147}
  height={147}   
@@ -25,9 +25,7 @@ const Categories = () => {
  alt='t-shirt'        
         />
         <CategoryImages
- imageSrc='/Images/cotton t-shirt.png'
- width={120}
- height={120}
+ imageSrc='/Images/Cap.png'
  alt='t-shirt'        
         />
     </div>

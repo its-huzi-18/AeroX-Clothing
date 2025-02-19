@@ -22,7 +22,7 @@ const NewArrival = () => {
         />
         <StylishShirt 
         alt='shirt'
-        imageSrc='/Images/arrival-3.png'
+        imageSrc='/Images/arrival-3-model.png'
         />
         <StylishShirt 
         alt='shirt'
