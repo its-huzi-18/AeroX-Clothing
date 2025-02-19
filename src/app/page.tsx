@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection'
 import Categories from './components/Categories'
 import ThirdSection from './components/ThirdSection'
 import NewArrival from './components/NewArrival'
+import HotUnder from './components/HotUnder'
 
 function page() {
   return (
@@ -12,6 +13,7 @@ function page() {
         <Categories />
         <ThirdSection />
         <NewArrival />
+        <HotUnder />
       </section>
     </div>
   )
