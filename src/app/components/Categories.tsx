@@ -5,7 +5,7 @@ const Categories = () => {
   return (
     <div className="">
     <h2 className="text-3xl font-semibold my-10">Shopping By Categories</h2>
-    <div className="flex justify-center gap-8"> 
+    <div className="flex justify-center gap-12"> 
         <CategoryImages
  imageSrc='/Images/t-shirt.png'
  alt='t-shirt'        
@@ -15,17 +15,13 @@ const Categories = () => {
  alt='t-shirt'        
         />
         <CategoryImages
- imageSrc='/Images/full-sleeves.png'
+ imageSrc='/Images/full-sleevesShirt.png'
  alt='t-shirt'   
- width={147}
- height={147}   
+ width={138}
+ height={138}   
         />
         <CategoryImages
  imageSrc='/Images/half-shirt.png'
- alt='t-shirt'        
-        />
-        <CategoryImages
- imageSrc='/Images/Cap.png'
  alt='t-shirt'        
         />
     </div>
