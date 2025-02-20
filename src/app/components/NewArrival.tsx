@@ -33,38 +33,6 @@ const NewArrival = () => {
         alt='shirt'
         imageSrc='/Images/arrival-1.png'
         />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
-        <StylishShirt 
-        alt='shirt'
-        imageSrc='/Images/logo.png'
-        />
         {/* <div className='w-[260px] h-[340px] bg-[#ececec]'>
         </div> */}
     </div>

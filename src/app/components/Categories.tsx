@@ -24,6 +24,12 @@ const Categories = () => {
  imageSrc='/Images/half-shirt.png'
  alt='t-shirt'        
         />
+        <CategoryImages
+ imageSrc='/Images/cotton-t-shirt.png'
+ alt='t-shirt'
+ width={140}
+ height={140}         
+        />
     </div>
     </div>
          )
