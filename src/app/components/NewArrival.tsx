@@ -1,5 +1,6 @@
 import React from 'react'
 import StylishShirt from './ImagesStyle'
+import Image from 'next/image'
 
 const NewArrival = () => {
   return (
@@ -19,7 +20,7 @@ const NewArrival = () => {
     <div className='flex justify-center gap-7 my-8 flex-wrap items-center'>
         <StylishShirt 
         alt='shirt'
-        imageSrc='/Images/model-4.png'
+        imageSrc='/Images/model-01.png'
         />
         <StylishShirt 
         alt='shirt'
@@ -35,6 +36,14 @@ const NewArrival = () => {
         />
         {/* <div className='w-[260px] h-[340px] bg-[#ececec]'>
         </div> */}
+    </div>
+    <div className='md:mt-24 mb-20 flex justify-center items-center'>
+      <Image
+      objectFit='fill'
+      src={"/Images/bottom-2.jpeg"}
+      width={1200}
+      height={400}
+      alt='bottom' />
     </div>
     </>
   )
