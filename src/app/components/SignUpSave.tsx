@@ -1,9 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import { useState } from "react";
 
-const SignUpSave = () => {
+const SignUpSAVE = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -63,5 +62,5 @@ const SignUpSave = () => {
     </div>
   );
 };
+export default SignUpSAVE;
 
-export default SignUpSave;
