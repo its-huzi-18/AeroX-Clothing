@@ -4,7 +4,7 @@ import Categories from './components/Categories'
 import ThirdSection from './components/ThirdSection'
 import NewArrival from './components/NewArrival'
 import NewSection from './components/NewSection'
-import SignUpSAVE from './components/SignUpSAVE'
+import SignUpSAVE from './components/Email'
 
 function page() {
   return (
