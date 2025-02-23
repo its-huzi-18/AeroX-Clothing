@@ -63,7 +63,6 @@ const NewArrival = () => {
     </div>
     <div className='md:mt-24 mb-20 flex justify-center items-center'>
       <Image
-      objectFit='fill'
       src={"/Images/bottom-2.jpeg"}
       width={1200}
       height={400}
