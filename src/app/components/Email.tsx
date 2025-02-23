@@ -35,12 +35,12 @@ const SignUpSAVE = () => {
 
   return (
     <div className="my-28 flex justify-between">
-      <div className="flex flex-1 flex-col gap-6 justify-center items-center">
+      <div className="flex flex-col gap-6 justify-center items-center">
         <h2 className="text-4xl font-bold">SIGN UP AND SAVE</h2>
-        <div className='text-2xl tracking-wider text-center flex flex-col gap-1'>Subscribe to get special offers,
+        <div className='text-2xl font-extralight tracking-wider text-center flex flex-col gap-1'>Subscribe to get special offers,
             <p> free giveaways, and once-in-a-lifetime</p>
             <p>  deals.</p>
-          <form onSubmit={handleSubmit} className="flex w-full my-3 max-w-lg">
+          <form onSubmit={handleSubmit} className="flex w-full my-3 max-w-lg ">
             <input
               type="email"
               value={email}
@@ -58,7 +58,7 @@ const SignUpSAVE = () => {
           {message && <p className="text-sm mt-2 text-green-600">{message}</p>}
         </div>
       </div>
-      <Image src={"/Images/Sign-Up.png"} width={450} height={450} alt="signup" />
+      <Image src={"/Images/Sign-Up.png"} width={420} height={420} alt="signup" />
     </div>
   );
 };

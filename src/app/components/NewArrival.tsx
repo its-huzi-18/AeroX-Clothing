@@ -18,22 +18,46 @@ const NewArrival = () => {
     <button className='text-xl  border-b-2 border-black/70'>View All</button>
         </div>
     <div className='flex justify-center gap-7 my-8 flex-wrap items-center'>
+      <div className='flex flex-col gap-4 items-center justify-center'>
         <StylishShirt 
         alt='shirt'
         imageSrc='/Images/model-01.png'
         />
+        <div className='flex justify-around px-2 w-full'>
+        <h2 className='font-semibold text-blue-600'>RS.1500</h2>
+        <h2 className='line-through text-gray-600'>RS.1600</h2>
+        </div>
+        </div>
+        <div className='flex flex-col gap-4 items-center justify-center'>
         <StylishShirt 
         alt='shirt'
         imageSrc='/Images/arrival-2.png'
         />
+         <div className='flex justify-around px-2 w-full'>
+        <h2 className='font-semibold text-blue-600'>RS.1500</h2>
+        <h2 className='line-through text-gray-600'>RS.1700</h2>
+        </div>
+        </div>
+        <div  className='flex flex-col gap-4 items-center justify-center'>
         <StylishShirt 
         alt='shirt'
         imageSrc='/Images/model-3.png'
         />
+         <div className='flex justify-around px-2 w-full'>
+        <h2 className='font-semibold text-blue-600'>RS.1500</h2>
+        <h2 className='line-through text-gray-600'>RS.1700</h2>
+        </div>
+        </div>
+        <div className='flex flex-col gap-4 items-center justify-center'>
         <StylishShirt 
         alt='shirt'
         imageSrc='/Images/arrival-1.png'
         />
+        <div className='flex justify-around px-2 w-full'>
+        <h2 className='font-semibold text-blue-600'>RS.1500</h2>
+        <h2 className='line-through text-gray-600'>RS.1700</h2>
+        </div>
+        </div>
         {/* <div className='w-[260px] h-[340px] bg-[#ececec]'>
         </div> */}
     </div>

@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack: (config) => {
-      config.resolve.fallback = { fs: false };
-      return config;
-    },
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    remotePatterns: [
+      {protocol:"https",
+        hostname: "cdn.sanity.io", // Specify the hostname here
+      },
+    ],
+  },
+ eslint:{
+ignoreDuringBuilds:true
+ }
+};
+
+export default nextConfig;
