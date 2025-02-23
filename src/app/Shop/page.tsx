@@ -1,8 +1,7 @@
-import React from "react";
-import AnimatedCard from "../components/AnimatedCard";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import AnimatedCard from "../components/AnimatedCard";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface Shirt {
@@ -15,13 +14,14 @@ interface Shirt {
   colors: string[];
 }
 
+// Server-side function
 const fetchShirts = async (): Promise<Shirt[]> => {
   const query = `*[_type == "shirt"]{ _id, image, price, oldPrice, width, height, colors }`;
   return await client.fetch(query);
 };
 
-const Page = async () => {
-  const shirts = await fetchShirts();
+export default async function Page() {
+  const shirts = await fetchShirts(); // ✅ Server component me directly await kar sakte hain
 
   return (
     <div className="my-10 mx-10 flex flex-wrap gap-6 justify-center">
@@ -47,12 +47,12 @@ const Page = async () => {
               <h2 className="font-semibold">Color</h2>
               <div className="flex gap-1">
                 {shirt.colors.map((color, index) => (
-           <div
-           key={index}
-           className="border-[1.5px] border-black w-5 h-5 flex justify-center items-center rounded-full"
-         >
-           <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }}></div>
-         </div>
+                  <div
+                    key={index}
+                    className="border-[1.5px] border-black w-5 h-5 flex justify-center items-center rounded-full"
+                  >
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }}></div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -61,6 +61,4 @@ const Page = async () => {
       })}
     </div>
   );
-};
-
-export default Page;
+}
