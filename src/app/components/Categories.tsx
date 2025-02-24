@@ -10,7 +10,7 @@ const Categories = () => {
  imageSrc='/Images/t-shirt.png'
  alt='t-shirt'        
  />
- <h2 className='text-lg font-semibold text-gray-700'>DryT-Shirts</h2>
+ <h2 className='text-lg font-semibold text-gray-700'>Drifit T-shirts</h2>
  </div>
  <div className='flex flex-col gap-4 items-center'>
         <CategoryImages

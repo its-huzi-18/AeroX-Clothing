@@ -4,6 +4,11 @@ const shirt = {
   type: "document",
   fields: [
     {
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
       name: "image",
       title: "Shirt Image",
       type: "image",
