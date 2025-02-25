@@ -4,6 +4,11 @@ const shirt = {
   type: "document",
   fields: [
     {
+      name: "color",
+      title: "Available Color",
+      type: "string",
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",
@@ -34,12 +39,7 @@ const shirt = {
       title: "Height",
       type: "number",
     },
-    {
-      name: "colors",
-      title: "Available Colors",
-      type: "array",
-      of: [{ type: "string" }],
-    },
+  
   ],
 };
 
