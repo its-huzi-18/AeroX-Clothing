@@ -25,13 +25,10 @@ const cartSlice = createSlice({
     addToCart: (state, action: PayloadAction<Omit<CartItem, "quantity">>) => {
       const existingItem = state.items.find((item) => item.id === action.payload.id);
 
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
+      if (!existingItem) {
         state.items.push({ ...action.payload, quantity: 1 });
+        state.totalQuantity += 1; // Increase totalQuantity only for new items
       }
-
-      state.totalQuantity += 1;
     },
   },
 });

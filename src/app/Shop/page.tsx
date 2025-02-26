@@ -39,12 +39,19 @@ export default async function Page() {
   
               {/* ✅ Wrap only Image & Title in Link */}
               <Link href={`/shirtDetail/${shirt._id}`}>
-                <div
-                  className="rounded-lg flex items-center justify-center overflow-hidden"
-                  style={{ width: `${width}px`, height: `${height}px`, background: "#ececec" }}
-                >
-                  <Image src={urlFor(shirt.image).url()} width={width} height={height} alt={shirt.title} />
-                </div>
+              <div
+  className="rounded-lg flex items-center justify-center overflow-hidden"
+  style={{ width: `${width}px`, height: `${height}px`, background: "#ececec" }}
+>
+  <Image 
+    src={urlFor(shirt.image).url()} 
+    width={width} 
+    height={height} 
+    alt={shirt.title} 
+    style={{ objectFit: "cover" }} // 👈 Yeh ensure karega ke image fit ho 
+  />
+</div>
+
               </Link>
   
               {/* ✅ Keep AddToCartButton separate */}
@@ -59,12 +66,12 @@ export default async function Page() {
             {/* ✅ AddToCartButton now functions separately */}
             <AddToCartButton shirt={shirt} />
   
-            <div className="flex flex-col gap-1 mt-1">
+            <div className="flex flex-col gap-1 mt-1 justify-center items-center">
               <h2 className="font-semibold text-gray-700 underline">{shirt.color}</h2>
   
               {/* ✅ Wrap only the Title in Link */}
               <Link href={`/shirtDetail/${shirt._id}`}>
-                <h2 className="font-semibold cursor-pointer">{shirt.title}</h2>
+                <h2 className="font-semibold cursor-pointer text-lg">{shirt.title}</h2>
               </Link>
   
               <div className="flex gap-10">

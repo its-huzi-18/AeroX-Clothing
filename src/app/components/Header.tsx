@@ -57,7 +57,7 @@ const Header = () => {
           {/* Cart Icon */}
           <div className="relative">
             {totalQuantity > 0 && (
-              <span className="absolute top-[-6px] right-[-3px] bg-green-600 text-white rounded-full text-sm px-2">
+              <span className="absolute top-[-7px] -right-[4px] w-4 h-4 bg-green-600 text-white rounded-full text-[12px] flex justify-center items-center">
                 {totalQuantity}
               </span>
             )}

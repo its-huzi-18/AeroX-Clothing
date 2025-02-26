@@ -5,7 +5,7 @@ import "./globals.css";
 import TopHeader from "./components/TopHeader";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Providers from "./components/Providers"; // Import the new client wrapper
+import Providers from "./components/Providers";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,14 +17,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-        <Toaster position="top-right" /> 
+          <Toaster position="top-right" />
           <Providers>
             <TopHeader />
             <Header />

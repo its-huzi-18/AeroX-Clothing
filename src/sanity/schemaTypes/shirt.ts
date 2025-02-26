@@ -39,7 +39,21 @@ const shirt = {
       title: "Height",
       type: "number",
     },
-  
+    {
+      name: "category",
+      title: "Category",
+      type: "string",
+      options: {
+        list: [
+          { title: "Drifit T-shirts", value: "drifit" },
+          { title: "Drop Shoulder", value: "drop-shoulder" },
+          { title: "Full-Sleeves", value: "full-sleeves" },
+          { title: "Polo Shirts", value: "polo-shirts" },
+          { title: "T-Shirts", value: "t-shirts" },
+        ],
+        layout: "dropdown", // This makes it a dropdown in Sanity Studio
+      },
+    },
   ],
 };
 
