@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import AnimatedCard from './AnimatedCard'
 
 const ThirdSection = () => {
   return (
@@ -11,13 +12,15 @@ width={590}
 height={390}
 alt='1st'
 />
+<AnimatedCard width='540px' height='320px'>
 <Image 
 className='shadow-lg rounded-md'
-src={'/Images/banner-2.png'}
+src={'/Images/Banner-22.jpg'}
 width={590}
-height={390}
+height={340}
 alt='2nd'
 />
+</AnimatedCard>
 
     </div>
   )
