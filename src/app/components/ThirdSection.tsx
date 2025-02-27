@@ -16,7 +16,7 @@ alt='1st'
   <div className='flex justify-center items-center object-contain w-[460px] h-[200px]'>
 <Image 
 className='shadow-lg rounded-md'
-src={'/Images/kk.png'}
+src={'/Images/banner-2.png'}
 width={470}
 height={220}
 alt='2nd'

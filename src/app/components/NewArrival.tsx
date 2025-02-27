@@ -21,7 +21,7 @@ const NewArrival = () => {
       <div className='flex flex-col gap-4 items-center justify-center'>
         <StylishShirt 
         alt='shirt'
-        imageSrc='/Images/model-01.png'
+        imageSrc='/Images/arrival-1.png'
         />
         <div className='flex justify-around px-2 w-full'>
         <h2 className='font-semibold text-blue-600'>RS.1500</h2>
@@ -51,7 +51,7 @@ const NewArrival = () => {
         <div className='flex flex-col gap-4 items-center justify-center'>
         <StylishShirt 
         alt='shirt'
-        imageSrc='/Images/arrival-1.png'
+        imageSrc='/Images/model-01.png'
         />
         <div className='flex justify-around px-2 w-full'>
         <h2 className='font-semibold text-blue-600'>RS.1500</h2>
@@ -63,7 +63,7 @@ const NewArrival = () => {
     </div>
     <div className='md:mt-24 mb-20 flex justify-center items-center'>
       <Image
-      src={"/Images/bottom-2.jpeg"}
+      src={"/Images/bottom-2.png"}
       width={1200}
       height={400}
       alt='bottom' />

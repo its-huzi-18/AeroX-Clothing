@@ -10,7 +10,7 @@ const NewSection = () => {
         </div>
 <div className='flex justify-center gap-7 my-10 flex-wrap'>
 <StylishShirt
-imageSrc='/Images/new-1.png'
+imageSrc='/Images/New-1.png'
 alt='shirt-1'
 />
 <StylishShirt
