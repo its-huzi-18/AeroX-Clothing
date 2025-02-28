@@ -1,5 +1,6 @@
 import React from 'react'
 import StylishShirt from './ImagesStyle'
+import GlowingButton from './GlowingButton'
 
 const NewSection = () => {
   return (

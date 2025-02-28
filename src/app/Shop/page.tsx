@@ -5,6 +5,7 @@ import AnimatedCard from "../components/AnimatedCard";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Link from "next/link";
 import AddToCartButton from "../components/AddToCartButton";
+import MainImage from "../components/MainImage";
 
 interface Shirt {
   _id: string;
@@ -26,6 +27,8 @@ export default async function Page() {
   const shirts = await fetchShirts(); // ✅ Server component me directly await kar sakte hain
 
   return (
+      <div>
+      <MainImage  title="Shop"/>
     <div className="my-10 mx-10 flex flex-wrap gap-6 justify-center">
       {shirts.map((shirt) => {
         const width = shirt.width ?? 260;
@@ -40,7 +43,7 @@ export default async function Page() {
               {/* ✅ Wrap only Image & Title in Link */}
               <Link href={`/shirtDetail/${shirt._id}`}>
               <div
-  className="rounded-lg flex items-center justify-center overflow-hidden"
+  className="rounded-lg object-contain p-6 flex items-center justify-center overflow-hidden"
   style={{ width: `${width}px`, height: `${height}px`, background: "#ececec" }}
 >
   <Image 
@@ -48,7 +51,7 @@ export default async function Page() {
     width={width} 
     height={height} 
     alt={shirt.title} 
-    style={{ objectFit: "cover" }} // 👈 Yeh ensure karega ke image fit ho 
+    style={{objectFit:"cover"}}
   />
 </div>
 
@@ -83,5 +86,6 @@ export default async function Page() {
         );
       })}
     </div>
+        </div>
   );
 }  

@@ -1,6 +1,9 @@
 import React from 'react'
 import StylishShirt from './ImagesStyle'
 import Image from 'next/image'
+import GlowingButton from './GlowingButton'
+import Link from 'next/link'
+import SocialMedia from './SocialMedia'
 
 const NewArrival = () => {
   return (
@@ -61,12 +64,21 @@ const NewArrival = () => {
         {/* <div className='w-[260px] h-[340px] bg-[#ececec]'>
         </div> */}
     </div>
-    <div className='md:mt-24 mb-20 flex justify-center items-center'>
+    <div className='relative md:mt-24 mb-20 flex justify-center items-center'>
       <Image
-      src={"/Images/bottom-2.png"}
+      src={"/Images/Bottom-2-new.png"}
       width={1200}
       height={400}
       alt='bottom' />
+      <div className='absolute left-[20%] top-[45%]'>
+        <Link href={"/Shop"}>
+      <GlowingButton />
+        </Link>
+      </div>
+        <div className='absolute top-[80%] left-[22%] flex flex-col justify-center items-center'>
+          <SocialMedia />
+          <h2 className='text-white font-medium text-[17px] tracking-wider'>Follow us</h2>
+        </div>
     </div>
     </>
   )
