@@ -1,13 +1,14 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
-import { useUser, SignInButton } from "@clerk/nextjs";
+import { useUser, useClerk } from "@clerk/nextjs";
 import Image from "next/image";
 
 const Review = () => {
   const { isSignedIn, user } = useUser();
+  const { openSignIn } = useClerk(); // ✅ Use Clerk's built-in sign-in function
+
   const [reviews, setReviews] = useState<
     { id: string; text: string; rating: number; image: string | null; name: string; avatar: string }[]
   >([]);
@@ -37,7 +38,7 @@ const Review = () => {
 
   const handleSubmit = () => {
     if (!isSignedIn) {
-      document.querySelector(".clerk-signin-button")?.click();
+      openSignIn(); // ✅ Open Clerk's sign-in modal directly
       return;
     }
 
@@ -142,10 +143,6 @@ const Review = () => {
           {editingId ? "Update" : "Submit"}
         </motion.button>
       </div>
-
-      {/* Hidden Clerk Sign-In Button */}
-      {!isSignedIn &&
-       <SignInButton className="clerk-signin-button hidden" />}
 
       <ul>
         {reviews.length === 0 ? (
