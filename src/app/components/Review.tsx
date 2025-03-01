@@ -105,7 +105,7 @@ const Review = () => {
       {/* Review Input & Submit Button */}
       <div className="flex flex-col gap-3 mb-4">
         <div className="flex items-center gap-2">
-          <Image width={40} height={40} src={isSignedIn ? user?.imageUrl : "/default-avatar.png"} alt="User Avatar" className="w-10 h-10 rounded-full" />
+          <Image width={40} height={40} src={isSignedIn ? user?.imageUrl : "/Images/default-avatar.png"} alt="User Avatar" className="w-10 h-10 rounded-full" />
           <input
             type="text"
             value={reviewText}
