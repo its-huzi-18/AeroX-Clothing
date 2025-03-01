@@ -1,19 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { CiSearch, CiStar } from "react-icons/ci";
 import Logo from "./Logo";
 import { IoBagOutline } from "react-icons/io5";
 import Account from "./Account";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
 const Header = () => {
-    const totalQuantity = useSelector((state: RootState) => (state.cart as { totalQuantity: number }).totalQuantity) || 0;
-    const pathname = usePathname(); // Get current path
+  const totalQuantity =
+    useSelector((state: RootState) => (state.cart as { totalQuantity: number }).totalQuantity) || 0;
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   const navbar = [
     { name: "Home", link: "/" },
@@ -21,6 +24,36 @@ const Header = () => {
     { name: "About", link: "/About" },
     { name: "Contact", link: "/Contact" },
   ];
+
+  // Store search input
+  const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
+
+  // Function to update search results
+  const updateSearch = (query: string) => {
+    const params = new URLSearchParams();
+    if (query.trim()) {
+      params.set("search", query);
+    }
+    router.push(`/Shop?${params.toString()}`);
+  };
+
+  // Handle input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+
+    // If input is cleared, automatically update results
+    if (value.trim() === "") {
+      updateSearch("");
+    }
+  };
+
+  // Handle Enter key press
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      updateSearch(searchQuery);
+    }
+  };
 
   return (
     <header>
@@ -36,8 +69,14 @@ const Header = () => {
             type="text"
             className="w-72 h-[38px] outline-none px-3 border-none"
             placeholder="What are you looking for?"
+            value={searchQuery}
+            onChange={handleInputChange} // Updates instantly when cleared
+            onKeyDown={handleKeyPress} // Press Enter to search
           />
-          <button className="hover:opacity-80 bg-black text-white py-2 px-4 border-l-2 border-black/70">
+          <button
+            className="hover:opacity-80 bg-black text-white py-2 px-4 border-l-2 border-black/70"
+            onClick={() => updateSearch(searchQuery)} // Click button to search
+          >
             Search
           </button>
         </div>
