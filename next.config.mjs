@@ -2,14 +2,19 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      {protocol:"https",
-        hostname: "cdn.sanity.io", // Specify the hostname here
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io", // Sanity images
+      },
+      {
+        protocol: "https",
+        hostname: "img.clerk.com", // Clerk profile images
       },
     ],
   },
- eslint:{
-ignoreDuringBuilds:true
- }
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

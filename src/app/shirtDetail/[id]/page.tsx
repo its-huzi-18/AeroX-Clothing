@@ -5,6 +5,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import AddToCartButton from '@/app/components/AddToCartButton';
 import AnimatedCard from '@/app/components/AnimatedCard';
+import SizeSelector from '@/app/components/SizeBtnShirt';
+import BuyNowButton from '@/app/components/BuyNowBtn';
+import Review from '@/app/components/Review';
 
 export interface ProductType {
   _id: string;
@@ -17,6 +20,7 @@ export interface ProductType {
   width: number;
   height: number;
   color: string;
+  sizes: string[];
 }
 
 const ProductDetails = async ({ params }: { params: { id: string } }) => {
@@ -53,16 +57,32 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
           <Image src={urlFor(product.image).url()} alt={product.name} width={500} height={600} className="max-w-full h-auto" />
         </div>
 
-        <div className="order-3 flex flex-col max-w-full lg:max-w-lg">
+        <div className="order-3 flex  gap-3 flex-col max-w-full lg:max-w-lg">
           <h1 className="text-2xl sm:text-4xl font-semibold my-2">{product.title}</h1>
-          <span className="text-lg sm:text-2xl text-[#9F9F9F]">Rs.{product.price}.00</span>
-          <p className="mt-6 text-sm lg:text-base">
+<div className='flex gap-3'>
+<h2 className="text-lg sm:text-2xl ">Rs.{product.price}.00</h2>
+<h2 className="text-lg sm:text-2xl text-red-500 line-through">Rs.{product.oldPrice}.00</h2>
+</div>
+          <div className='flex gap-4'>
+          <div className='flex gap-2'>
+            <h2 className='font-medium'>Color</h2> <span>|</span>
+            <h2 className='text-gray-500'>{product.color}</h2>
+          </div>
+          <div className='flex gap-2'>
+            <h2 className='font-medium'>Category</h2> <span>|</span>
+            <h2 className='text-[#9F9F9F]'>{product.category}</h2>
+          </div>
+          </div>
+          <SizeSelector sizes={product.sizes ?? ["S","M","L","XL"]} />
+
+          {/* <p className="mt-6 text-sm lg:text-base">
             A well-balanced audio device with clear midrange and extended highs.
-          </p>
+          </p> */}
           <AddToCartButton shirt={product} />
+<BuyNowButton />
         </div>
       </div>
-
+<Review />
       <hr className="mt-5" />
       <h1 className="ml-12 text-2xl sm:text-4xl font-semibold mt-2 mb-4">Related Products</h1>
       <div className="flex items-center flex-wrap justify-evenly px-4">
