@@ -53,7 +53,7 @@ const Categories = () => {
         {/* Polo Shirts */}
         <div
           className="flex flex-col gap-4 items-center cursor-pointer"
-          onClick={() => handleCategoryClick("Polo")}
+          onClick={() => handleCategoryClick("polo-shirts")}
         >
           <CategoryImages imageSrc="/Images/half-shirt.png" alt="Polo Shirts" />
           <h2 className="text-lg font-semibold text-gray-700">Polo Shirts</h2>
