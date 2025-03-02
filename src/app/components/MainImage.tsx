@@ -25,17 +25,9 @@ const MainImage: React.FC<ImageTittle> = ({ title }) => {
       {/* Content */}
       <div className="flex flex-col items-center gap-4 z-10 text-center">
         {/* Logo Section */}
-        <div className="flex flex-col items-center">
-          <Image
-            src="/Images/whiteLogo.png"
-            width={120}
-            height={120}
-            alt="logo"
-          />
           <h2 className="text-2xl md:text-4xl lg:text-[48px] font-medium text-white">
             {title}
           </h2>
-        </div>
 
         {/* Breadcrumb Section */}
         <div className="flex items-center gap-2 text-sm md:text-base text-white">

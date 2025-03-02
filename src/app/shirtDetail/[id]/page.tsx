@@ -53,7 +53,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
       </nav>
 
       <div className="flex flex-col lg:flex-row items-start justify-evenly mt-8 px-4 lg:px-16 gap-8">
-        <div className="order-1 lg:order-2 bg-[#F9F1E7] w-full lg:w-1/2 flex items-center justify-center p-4 rounded-md">
+        <div className="order-1 lg:order-2 bg-[#F9F1E7] w-full lg:w-1/2 flex items-center justify-center p-8 rounded-md">
           <Image src={urlFor(product.image).url()} alt={product.name} width={500} height={600} className="max-w-full h-auto" />
         </div>
 
@@ -85,16 +85,64 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
 <Review />
       <hr className="mt-5" />
       <h1 className="ml-12 text-2xl sm:text-4xl font-semibold mt-2 mb-4">Related Products</h1>
-      <div className="flex items-center flex-wrap justify-evenly px-4">
+      <div className="my-10 mx-4 flex flex-wrap gap-12 justify-center">
         {relatedProducts.map((shirt) => (
-          <div key={shirt._id} className="flex flex-col gap-3">
-            <Link href={`/shirtDetail/${shirt._id}`}>
-              <AnimatedCard>
-                <Image src={urlFor(shirt.image).url()} width={440} height={540} alt={shirt.title} className="object-cover" />
-              </AnimatedCard>
-            </Link>
-            <AddToCartButton shirt={shirt} />
+        <AnimatedCard key={shirt._id}>
+        <div className="relative">
+          <div className="w-[51px] text-center bg-zinc-600 text-white font-semibold absolute top-0 left-0">
+            New
           </div>
+          <div className="w-[51px] text-center text-white bg-red-500 font-semibold absolute top-[24px] left-0">
+            -18%
+          </div>
+
+          {/* Image & Title wrapped in Link */}
+          <Link href={`/shirtDetail/${shirt._id}`}>
+            <div
+              className="rounded-lg object-contain p-8 flex items-center justify-center overflow-hidden bg-[#ececec]">
+              <Image 
+                src={urlFor(shirt.image).url()} 
+                width={260} 
+                height={340} 
+                alt={shirt.title} 
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </Link>
+
+          <div className="flex gap-1 absolute bottom-[10px] items-center ml-14">
+            {["XS", "S", "M", "L"].map((size) => (
+              <div
+                key={size}
+                className="font-medium bg-white w-8 h-8 rounded-full flex justify-center items-center text-[15px] shadow-md shadow-gray-700 hover:shadow-sm"
+              >
+                {size}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <AddToCartButton shirt={shirt} />
+
+        <div className="flex flex-col gap-1 mt-1 justify-center items-center">
+          <h2 className="font-semibold text-gray-700 underline">
+            {shirt.color}
+          </h2>
+
+          <Link href={`/shirtDetail/${shirt._id}`}>
+            <h2 className="font-semibold cursor-pointer text-lg">
+              {shirt.title}
+            </h2>
+          </Link>
+
+          <div className="flex gap-10">
+            <h2 className="font-semibold">Rs.{shirt.price}.00</h2>
+            <h2 className="line-through text-red-600">
+              Rs.{shirt.oldPrice}.00
+            </h2>
+          </div>
+        </div>
+      </AnimatedCard>
         ))}
       </div>
     </>

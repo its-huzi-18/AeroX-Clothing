@@ -30,7 +30,7 @@ const Categories = () => {
         {/* Drop Shoulder */}
         <div
           className="flex flex-col gap-4 items-center cursor-pointer"
-          onClick={() => handleCategoryClick("Drop")}
+          onClick={() => handleCategoryClick("drop-shoulder")}
         >
           <CategoryImages imageSrc="/Images/dropShoulder.png" alt="Drop Shoulder" />
           <h2 className="text-lg font-semibold text-gray-700">Drop Shoulder</h2>

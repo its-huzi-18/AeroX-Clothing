@@ -39,7 +39,7 @@ const FilteredShirts: React.FC<FilteredShirtsProps> = ({ shirts }) => {
   }, [searchQuery, selectedCategory, shirts]);
 
   return (
-    <div className="my-10 mx-10 flex flex-wrap gap-6 justify-center">
+    <div className="my-10 mx-10 flex flex-wrap gap-10 justify-center">
       {filteredShirts.length > 0 ? (
         filteredShirts.map((shirt) => {
           const width = shirt.width ?? 260;
