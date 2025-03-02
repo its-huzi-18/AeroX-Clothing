@@ -14,6 +14,7 @@ interface Review {
   image: string | null;
   name: string;
   avatar: string;
+  userId: string; // Added userId to the interface
 }
 
 const Review = () => {
@@ -41,48 +42,40 @@ const Review = () => {
   }, []);
 
   const handleSubmit = async () => {
-    console.log("Submit button clicked"); // Debugging log
-  
     if (!isSignedIn) {
-      console.log("User not signed in, opening sign-in modal"); // Debugging log
       openSignIn();
       return;
     }
-  
+
     if (reviewText.trim() === "" || rating === 0) {
-      console.error("Review text and rating are required."); // Debugging log
+      console.error("Review text and rating are required.");
       return;
     }
-  
+
     const reviewData: Omit<Review, "id"> = {
       text: reviewText,
       rating,
       image: reviewImage,
       name: user?.fullName || "Anonymous",
       avatar: user?.imageUrl || "/default-avatar.png",
+      userId: user?.id || "", // Include the current user's ID
     };
-  
-    console.log("Review data to be saved:", reviewData); // Debugging log
-  
+
     try {
       if (editingId) {
-        console.log("Updating review with ID:", editingId); // Debugging log
         const reviewRef = doc(firestore, "reviews", editingId);
         await updateDoc(reviewRef, reviewData);
-        console.log("Review updated successfully!"); // Debugging log
         setEditingId(null);
       } else {
-        console.log("Adding new review"); // Debugging log
         await addDoc(collection(firestore, "reviews"), reviewData);
-        console.log("Review added successfully!"); // Debugging log
       }
-  
+
       // Clear the form
       setReviewText("");
       setRating(0);
       setReviewImage(null);
     } catch (error) {
-      console.error("Error saving review:", error); // Debugging log
+      console.error("Error saving review:", error);
     }
   };
 
@@ -175,7 +168,7 @@ const Review = () => {
         {reviews.length === 0 ? (
           <p className="text-gray-500">No reviews yet. Be the first to review!</p>
         ) : (
-          reviews.map(({ id, text, rating, image, name, avatar }) => (
+          reviews.map(({ id, text, rating, image, name, avatar, userId }) => (
             <motion.li
               key={id}
               initial={{ opacity: 0, y: 10 }}
@@ -195,20 +188,22 @@ const Review = () => {
                 </div>
                 {image && <Image src={image} alt="Review Image" width={80} height={80} className="rounded-lg mt-2" />}
               </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => handleEdit(id, text, rating, image)}
-                  className="text-yellow-500 hover:text-yellow-600 transition"
-                >
-                  ✏️
-                </button>
-                <button
-                  onClick={() => handleDelete(id)}
-                  className="text-red-500 hover:text-red-600 transition"
-                >
-                  🗑️
-                </button>
-              </div>
+              {user?.id === userId && ( // Conditionally render buttons
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleEdit(id, text, rating, image)}
+                    className="text-yellow-500 hover:text-yellow-600 transition"
+                  >
+                    ✏️
+                  </button>
+                  <button
+                    onClick={() => handleDelete(id)}
+                    className="text-red-500 hover:text-red-600 transition"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              )}
             </motion.li>
           ))
         )}
