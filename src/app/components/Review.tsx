@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { v4 as uuidv4 } from "uuid";
 import { useUser, useClerk } from "@clerk/nextjs";
 import Image from "next/image";
 import { firestore } from "@/lib/firebaseConfig";
