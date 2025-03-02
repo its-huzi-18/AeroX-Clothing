@@ -83,7 +83,8 @@ const FilteredShirts: React.FC<FilteredShirtsProps> = ({ shirts }) => {
                 </div>
               </div>
 
-              <AddToCartButton shirt={shirt} />
+              {/* Pass a default quantity of 1 */}
+              <AddToCartButton shirt={shirt} quantity={1} />
 
               <div className="flex flex-col gap-1 mt-1 justify-center items-center">
                 <h2 className="font-semibold text-gray-700 underline">
