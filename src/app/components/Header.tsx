@@ -96,11 +96,13 @@ const Header = () => {
           {/* Cart Icon */}
           <div className="relative">
             {totalQuantity > 0 && (
-              <span className="absolute top-[-7px] -right-[4px] w-4 h-4 bg-green-600 text-white rounded-full text-[12px] flex justify-center items-center">
+              <span className="absolute top-[-7px] -right-[4px] w-[18px] h-[18px] bg-green-600 text-white rounded-full text-[11.2px] flex justify-center items-center">
                 {totalQuantity}
               </span>
             )}
-            <IoBagOutline className="text-[27px]" />
+          <Link href={"/Cart"}>
+            <IoBagOutline className="text-[27px] hover:opacity-75" />
+            </Link>
           </div>
         </div>
       </div>
