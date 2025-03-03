@@ -32,31 +32,8 @@ const Categories = () => {
           className="flex flex-col gap-4 items-center cursor-pointer"
           onClick={() => handleCategoryClick("drop-shoulder")}
         >
-          <CategoryImages imageSrc="/Images/dropShoulder.png" alt="Drop Shoulder" />
+          <CategoryImages imageSrc="/Images/Drop Shoulder.png" alt="Drop Shoulder" />
           <h2 className="text-lg font-semibold text-gray-700">Drop Shoulder</h2>
-        </div>
-
-        {/* Full-Sleeves */}
-        <div
-          className="flex flex-col gap-4 items-center cursor-pointer"
-          onClick={() => handleCategoryClick("Full-Sleeves")}
-        >
-          <CategoryImages
-            imageSrc="/Images/full-sleevesShirt.png"
-            alt="Full-Sleeves"
-            width={138}
-            height={138}
-          />
-          <h2 className="text-lg font-semibold text-gray-700">Full-Sleeves</h2>
-        </div>
-
-        {/* Polo Shirts */}
-        <div
-          className="flex flex-col gap-4 items-center cursor-pointer"
-          onClick={() => handleCategoryClick("polo-shirts")}
-        >
-          <CategoryImages imageSrc="/Images/half-shirt.png" alt="Polo Shirts" />
-          <h2 className="text-lg font-semibold text-gray-700">Polo Shirts</h2>
         </div>
 
         {/* T-Shirts */}
@@ -65,12 +42,35 @@ const Categories = () => {
           onClick={() => handleCategoryClick("T-Shirts")}
         >
           <CategoryImages
-            imageSrc="/Images/cotton-t-shirt.png"
+            imageSrc="/Images/Cotton T-shirt.png"
             alt="T-Shirts"
             width={140}
             height={140}
           />
-          <h2 className="text-lg font-semibold text-gray-700">T-Shirts</h2>
+          <h2 className="text-lg font-semibold text-gray-700 pt-2">Cotton T-shirts</h2>
+        </div>
+
+ {/* Polo Shirts */}
+ <div
+          className="flex flex-col gap-4 items-center cursor-pointer"
+          onClick={() => handleCategoryClick("polo-shirts")}
+        >
+          <CategoryImages imageSrc="/Images/half-shirt.png" alt="Polo Shirts" />
+          <h2 className="text-lg font-semibold text-gray-700">Polo Shirts</h2>
+        </div>
+
+         {/* Sweat-shirt */}
+         <div
+          className="flex flex-col gap-4 items-center cursor-pointer"
+          onClick={() => handleCategoryClick("sweat-shirt")}
+        >
+          <CategoryImages
+            imageSrc="/Images/sweatshirt.png"
+            alt="Sweatshirt"
+            width={138}
+            height={138}
+          />
+          <h2 className="text-lg font-semibold text-gray-700">Sweat Shirts</h2>
         </div>
       </div>
     </div>

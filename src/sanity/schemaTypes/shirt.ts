@@ -47,9 +47,9 @@ const shirt = {
         list: [
           { title: "Drifit T-shirts", value: "drifit" },
           { title: "Drop Shoulder", value: "drop-shoulder" },
-          { title: "Full-Sleeves", value: "full-sleeves" },
+          { title: "Sweat Shirt", value: "sweat-shirt" },
           { title: "Polo Shirts", value: "polo-shirts" },
-          { title: "T-Shirts", value: "t-shirts" },
+          { title: "Cotton T-shirts", value: "t-shirts" },
         ],
         layout: "dropdown", // This makes it a dropdown in Sanity Studio
       },

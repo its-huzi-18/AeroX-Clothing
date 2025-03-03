@@ -26,7 +26,7 @@ const fetchShirts = async (): Promise<Shirt[]> => {
     "drop-shoulder",
     "drifit",
     "polo-shirts",
-    "full-sleeves",
+    "sweat-shirt",
   ];
 
   // Sort shirts based on category order
