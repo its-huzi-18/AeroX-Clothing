@@ -10,7 +10,7 @@ export default function MarqueeText() {
         animate={{ x: ["100%", "-100%"] }} // Move from right to left
         transition={{ repeat: Infinity, duration:6, ease: "linear" }}
       >
-        Enjoy up to 20% OFF on your order! 
+        Enjoy up to 30% OFF on your order! 
       </motion.div>
     </div>
   );
