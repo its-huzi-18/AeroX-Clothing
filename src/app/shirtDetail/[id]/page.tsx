@@ -7,6 +7,8 @@ import AnimatedCard from '@/app/components/AnimatedCard';
 import SizeSelector from '@/app/components/SizeBtnShirt';
 import Review from '@/app/components/Review';
 import ProductActions from '@/app/components/ProductActions'; // Import the new component
+import SizeTable from '@/app/components/SizeTable';
+import ShirtGuide from '@/app/components/shirtGuide';
 
 export interface ProductType {
   _id: string;
@@ -76,12 +78,13 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
 
           {/* Use the ProductActions component */}
           <ProductActions product={product} />
-        </div>
+          <ShirtGuide category={product.category} />
+                  </div>
       </div>
 
       <Review />
       <hr className="mt-5" />
-      <h1 className="ml-12 text-2xl sm:text-4xl font-semibold mt-2 mb-4">Related Products</h1>
+      <h1 className="ml-12 text-2xl sm:text-4xl font-semibold mt-4 mb-4">Related Products</h1>
       <div className="my-10 mx-4 flex flex-wrap gap-12 justify-center">
         {relatedProducts.map((shirt) => (
           <AnimatedCard key={shirt._id}>
@@ -117,8 +120,6 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 ))}
               </div>
             </div>
-
-            {/* <AddToCartButton shirt={shirt} quantity={1} /> Default quantity for related products */}
 
             <div className="flex flex-col gap-1 mt-1 justify-center items-center">
               <h2 className="font-semibold text-gray-700 underline">

@@ -43,7 +43,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ shirt, quantity }) =>
   return (
     <button
       onClick={handleAddToCart}
-      className="border-[1px] border-black w-[16rem] py-2 shadow-sm shadow-gray-500 mt-1 rounded-md hover:scale-105"
+      className="border-[1px] border-black w-[15rem] py-2 shadow-sm shadow-gray-500 mt-1 rounded-md hover:scale-105"
     >
       Quick Add
     </button>

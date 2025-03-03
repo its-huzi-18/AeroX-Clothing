@@ -70,3 +70,29 @@ body {
     @apply bg-background text-foreground;
   }
 }
+/* styles.css */
+.animated-header {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 2.2rem 0;
+  position: relative;
+  display: inline-block;
+  color: #333; /* Initial text color */
+  animation: colorChange 4s infinite alternate, typing 4s steps(40, end);
+}
+
+/* Text color change animation */
+@keyframes colorChange {
+  0% {
+    color: #333; /* Start with the initial color */
+  }
+  100% {
+    color: #00308F; /* Transition to dark blue */
+  }
+}
+
+/* Optional: Add a hover effect */
+.animated-header:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

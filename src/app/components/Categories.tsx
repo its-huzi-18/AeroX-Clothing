@@ -16,7 +16,7 @@ const Categories = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-semibold my-10">Shopping By Categories</h2>
+      <h2 className="animated-header">Shopping By Categories</h2>
       <div className="flex justify-center gap-8">
         {/* Drifit T-shirts */}
         <div
