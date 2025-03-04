@@ -6,9 +6,10 @@ import React, { useState } from "react";
 interface ImageProps {
   imageSrc: string;
   alt: string;
+  discount:number;
 }
 
-const StylishShirt: React.FC<ImageProps> = ({ imageSrc, alt }) => {
+const StylishShirt: React.FC<ImageProps> = ({ imageSrc, alt,discount }) => {
   const [isLoaded, setIsLoaded] = useState(false); // Track image load state
 
   return (
@@ -48,6 +49,14 @@ const StylishShirt: React.FC<ImageProps> = ({ imageSrc, alt }) => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="absolute w-[260px] h-[320px] origin-center"
       >
+          {/* <div className=" relative"> */}
+        
+                <div className="w-[51px] text-center bg-zinc-600 text-white font-semibold absolute -top-[10px] left-0">
+                          New
+                        </div>
+                          <div className="w-[51px] text-center text-white bg-red-500 font-semibold absolute top-[14px] left-0">
+                    -{discount}%
+                          </div>
         <Image
           src={imageSrc}
           alt={alt}
@@ -55,9 +64,10 @@ const StylishShirt: React.FC<ImageProps> = ({ imageSrc, alt }) => {
           objectFit="contain"
           className={`drop-shadow-xl transition-opacity duration-500 ${
             isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          onLoadingComplete={() => setIsLoaded(true)} // Update state when loaded
-        />
+            }`}
+            onLoadingComplete={() => setIsLoaded(true)} // Update state when loaded
+            />
+            {/* </div> */}
       </motion.div>
 
       {/* 🔥 Soft Glow Effect */}
