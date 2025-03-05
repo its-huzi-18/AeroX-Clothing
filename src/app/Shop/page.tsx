@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import MainImage from "../components/MainImage";
-import Head from "next/head";
 import FilteredShirts from "../components/FilteredShirts"; // Import client component
+import { Metadata } from "next"; // Import Metadata type
 
 interface Shirt {
   _id: string;
@@ -37,17 +37,19 @@ const fetchShirts = async (): Promise<Shirt[]> => {
   return shirts;
 };
 
+// Define metadata
+export const metadata: Metadata = {
+  title: "Shop - Buy the Best Shirts Online",
+  description:
+    "Explore our latest collection of stylish shirts, including T-shirts, Polo, Full Sleeves, and more. Get the best deals now!",
+};
+
 export default async function Page() {
   const shirts = await fetchShirts();
 
   return (
     <div>
-      <Head>
-        <title>Shop - Buy the Best Shirts Online</title>
-        <meta name="description" content="Explore our latest collection of stylish shirts, including T-shirts, Polo, Full Sleeves, and more. Get the best deals now!" />
-      </Head>
       <MainImage title="Shop" />
-      
       {/* Render filtered shirts based on search query */}
       <FilteredShirts shirts={shirts} />
     </div>

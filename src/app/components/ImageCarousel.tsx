@@ -21,7 +21,7 @@ const ImageCarousel = () => {
   };
 
   const images = [
-    '/Images/Main.png',
+    '/Images/arrival-banner.png',
     '/Images/Main (2).png',
     '/Images/Main 3.png',
   ];
