@@ -9,9 +9,8 @@ import Providers from "./components/Providers";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "AeroX Fashion",
+  title: "AeroX Wear",
   description: "This is our clothing brand where we will sell all types of shirts of our AeroX brand",
 };
 
