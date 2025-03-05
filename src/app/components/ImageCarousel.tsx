@@ -22,7 +22,7 @@ const ImageCarousel = () => {
 
   const images = [
     '/Images/arrival-banner.png',
-    '/Images/Main (2).png',
+    '/Images/sale-banner.png',
     '/Images/Main 3.png',
   ];
 

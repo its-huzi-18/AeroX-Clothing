@@ -4,7 +4,7 @@ import Link from 'next/link'
 const detail = [
   {ImgSrc:"/Images/New-01.png",title:"Cotton T-shirt",link:"b968d07d-d145-484e-bfcd-1f6fdf1d34b4",discount:25,oldPrice:2000,price:1499},
   {ImgSrc:"/Images/New-04.png",title:"Drifit T-shirt",link:"d810d01f-c468-4ed7-bc13-92b78b0d0df8",discount:20,oldPrice:2499,price:1999},
-  {ImgSrc:"/Images/New-3.png",title:"Polo T-shirt",link:"ee95a203-9247-476d-849c-35d6148d0d66",discount:20,oldPrice:2499,price:1999},
+  {ImgSrc:"/Images/New-3.png",title:"Polo T-shirt",link:"d5096a4e-311d-41da-ac9e-5ea5b4b6ba5c",discount:20,oldPrice:2499,price:1999},
   {ImgSrc:"/Images/new-2-.png",title:"Sweatshirt",link:"490d584e-659d-4220-9d5d-60fa9d0ac777",discount:20,oldPrice:2499,price:1999},
 
 ]

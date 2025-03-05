@@ -9,7 +9,7 @@ const detail = [
   {ImgSrc:"/Images/arrival-1.png",title:"Cotton T-shirt",link:"da38278f-0704-4ec9-821b-95c2aa731e68",discount:25,oldPrice:2000,price:1499},
   {ImgSrc:"/Images/arrival-2.png",title:"Drop Shoulder",link:"a2807e85-cc15-4724-88fc-94892fb83d95",discount:20,oldPrice:2499,price:1999},
   {ImgSrc:"/Images/model-3.png",title:"Polo T-shirt",link:"1733865d-0953-47b9-ad62-734e053cbcfe",discount:20,oldPrice:2499,price:1999},
-  {ImgSrc:"/Images/model-01.png",title:"Cotton T-shirt",link:"da38278f-0704-4ec9-821b-95c2aa731e68",discount:25,oldPrice:2000,price:1499},
+  {ImgSrc:"/Images/model-01.png",title:"Cotton T-shirt",link:"1a3a588e-ca7a-4ddb-9a1f-10280c7330c4",discount:25,oldPrice:2000,price:1499},
 ]
 
 const NewArrival = () => {
