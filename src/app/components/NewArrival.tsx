@@ -47,10 +47,10 @@ const NewArrival = () => {
         </div>
       <div className="relative md:mt-24 mb-20 flex justify-center items-center">
         <Image
-          src={"/Images/Bottom-2-new.png"}
+          src={"/Images/shirt-collection.png"}
           width={1200}
           height={400}
-          alt="bottom"
+          alt="shirt-collection"
         />
         <div className="absolute left-[20%] top-[45%]">
           <Link href={"/Shop"}>
