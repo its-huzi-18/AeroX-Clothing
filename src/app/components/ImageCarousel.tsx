@@ -21,7 +21,7 @@ const ImageCarousel = () => {
   };
 
   const images = [
-    '/Images/Arrival-banner.png',
+    '/Images/Arrival-banner-1.png',
     '/Images/Arrival-banner-2.png',
     '/Images/Arrival-banner-3.png',
     '/Images/Arrival-banner-4.png',
