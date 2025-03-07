@@ -1,18 +1,19 @@
-"use client"; // ✅ Client-side component
+"use client";
 
 import { useState } from "react";
 
 interface SizeSelectorProps {
   sizes: string[];
+  onSizeChange: (size: string) => void;
 }
 
-const SizeSelector: React.FC<SizeSelectorProps> = ({ sizes }) => {
+const SizeSelector: React.FC<SizeSelectorProps> = ({ sizes, onSizeChange }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   const handleSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSize = event.target.value;
     setSelectedSize(newSize);
-    console.log("User selected size:", newSize); // Debugging
+    onSizeChange(newSize);
   };
 
   return (

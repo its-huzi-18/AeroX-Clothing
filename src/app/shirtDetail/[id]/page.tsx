@@ -4,11 +4,10 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import AnimatedCard from '@/app/components/AnimatedCard';
-import SizeSelector from '@/app/components/SizeBtnShirt';
 import Review from '@/app/components/Review';
-import ProductActions from '@/app/components/ProductActions'; // Import the new component
-import SizeTable from '@/app/components/SizeTable';
 import ShirtGuide from '@/app/components/shirtGuide';
+import SizeSelectorWrapper from '@/app/components/SizeSelectorWrapper'; // Import SizeSelectorWrapper
+import AddToCartButton from '@/app/components/AddToCartButton';
 
 export interface ProductType {
   _id: string;
@@ -74,12 +73,12 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
               <h2 className="text-[#9F9F9F]">{product.category}</h2>
             </div>
           </div>
-          <SizeSelector sizes={product.sizes ?? ["S", "M", "L", "XL"]} />
 
-          {/* Use the ProductActions component */}
-          <ProductActions product={product} />
+          {/* Use SizeSelectorWrapper and pass sizes and product */}
+          <SizeSelectorWrapper sizes={product.sizes ?? ["S", "M", "L", "XL"]} product={product} />
+
           <ShirtGuide category={product.category} />
-                  </div>
+        </div>
       </div>
 
       <Review />
@@ -120,6 +119,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
                 ))}
               </div>
             </div>
+              <AddToCartButton shirt={shirt} quantity={1} />
 
             <div className="flex flex-col gap-1 mt-1 justify-center items-center">
               <h2 className="font-semibold text-gray-700 underline">
