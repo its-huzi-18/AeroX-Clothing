@@ -9,7 +9,7 @@ export interface ProductType {
   category?: string;
   sizes?: string[]; // Required property
   width?: number;
-  quantity: number;
+  quantity?: number;
   selectedSize?:string[];
   height?: number;
 }
