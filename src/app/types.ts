@@ -6,8 +6,10 @@ export interface ProductType {
   price: number;
   oldPrice: number;
   color: string;
-  category: string;
-  sizes: string[]; // Required property
+  category?: string;
+  sizes?: string[]; // Required property
   width?: number;
+  quantity: number;
+  selectedSize?:string[];
   height?: number;
 }

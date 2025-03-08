@@ -35,26 +35,7 @@ const AboutPage = () => {
             <p className="text-gray-600 mb-4">
               Join us in our mission to elevate your wardrobe with timeless designs and unmatched quality.
             </p>
-            {/* Founders' Roles */}
-            <div className="mt-6">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Meet the Founders</h3>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <FaUser className="text-2xl text-blue-600 mr-4" />
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-800">Huzaifa Wahab</h4>
-                    <p className="text-gray-600">Designer & Developer of this Website</p>
-                  </div>
-                </div>
-                <div className="flex items-center">
-                  <FaChartLine className="text-2xl text-green-600 mr-4" />
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-800">Faizan Nadeem</h4>
-                    <p className="text-gray-600">Responsible for Marketing & Shirt Production</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      
           </div>
 
           {/* Right Section - Model Image */}
