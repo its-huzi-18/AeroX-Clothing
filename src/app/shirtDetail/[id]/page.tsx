@@ -13,6 +13,7 @@ export interface ProductType {
   _id: string;
   name: string;
   image: any;
+  quantity:number
   price: number;
   oldPrice: number;
   category: string;
