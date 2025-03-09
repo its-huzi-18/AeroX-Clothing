@@ -3,11 +3,27 @@
 import { useState } from "react";
 import SizeSelector from "@/app/components/SizeBtnShirt";
 import ProductActions from "@/app/components/ProductActions"; // Import ProductActions
-import { ProductType } from "@/app/types"; // Import ProductType
+
+interface ProductType {
+  _id: string;
+  name: string; // Required property
+  title: string;
+  image: any;
+  price: number;
+  oldPrice: number;
+  color: string;
+  category?: string;
+  sizes?: string[]; // Required property
+  width?: number;
+  quantity: number;
+  selectedSize?:string[];
+  height?: number;
+}; // Pass the product pro
+
 
 interface SizeSelectorWrapperProps {
   sizes: string[];
-  product: ProductType; // Pass the product prop
+  product:ProductType
 }
 
 const SizeSelectorWrapper: React.FC<SizeSelectorWrapperProps> = ({ sizes, product }) => {
