@@ -37,23 +37,6 @@ const NewSection = () => {
         </div>
         ))}
         </div>
-
-{/* <StylishShirt
-imageSrc='/Images/New-01.png'
-alt='shirt-1'
-/>
-<StylishShirt
-imageSrc='/Images/New-2.png'
-alt='shirt-1'
-/>
-<StylishShirt
-imageSrc='/Images/New-3.png'
-alt='shirt-1'
-/>
-<StylishShirt
-imageSrc='/Images/New-4.png'
-alt='shirt-1'
-/> */}
 </div>
     </div>
   )
