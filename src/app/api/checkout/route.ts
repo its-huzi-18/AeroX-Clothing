@@ -16,6 +16,8 @@ interface OrderDetails {
     color: string;
   }[];
   paymentMethod: string;
+  subtotal: number;
+  shippingFee: number;
   totalPrice: number;
 }
 
@@ -29,22 +31,11 @@ export async function POST(request: Request) {
       city,
       cartItems,
       paymentMethod,
+      subtotal,
+      shippingFee,
       totalPrice,
     } = (await request.json()) as OrderDetails;
 
-    // Log the received data for debugging
-    console.log('Received Order Details:', {
-      name,
-      email,
-      phone,
-      address,
-      city,
-      cartItems,
-      paymentMethod,
-      totalPrice,
-    });
-
-    // Configure Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -90,8 +81,12 @@ export async function POST(request: Request) {
         <p><strong>Phone:</strong> ${phone}</p>
         <h2>Payment Method</h2>
         <p><strong>${paymentMethod}</strong></p>
-        <h2>Total Price</h2>
-        <p><strong>Rs ${totalPrice}</strong></p>
+        <h2>Price Breakdown</h2>
+   <p><strong>Subtotal:</strong> Rs.${subtotal}.00</p>
+        <p><strong>Shipping Fee:</strong> Rs.${shippingFee}.00</p>
+        <h3 style="font-size: 18px; font-weight: bold; color: #000;">
+          <strong>Total Price:</strong> Rs.${totalPrice}.00
+        </h3>
       `,
     };
 
@@ -112,8 +107,12 @@ export async function POST(request: Request) {
         <p><strong>Phone:</strong> ${phone}</p>
         <h2>Payment Method</h2>
         <p><strong>${paymentMethod}</strong></p>
-        <h2>Total Price</h2>
-        <p><strong>Rs ${totalPrice}</strong></p>
+        <h2>Price Breakdown</h2>
+          <p><strong>Subtotal:</strong> Rs.${subtotal}.00</p>
+        <p><strong>Shipping Fee:</strong> Rs.${shippingFee}.00</p>
+        <h3 style="font-size: 18px; font-weight: bold; color: #000;">
+          <strong>Total Price:</strong> Rs.${totalPrice}.00
+        </h3>
       `,
     };
 
@@ -121,15 +120,11 @@ export async function POST(request: Request) {
     await transporter.sendMail(userMailOptions);
     await transporter.sendMail(adminMailOptions);
 
-    console.log('Email sent to user:', email);
-    console.log('Email sent to admin:', adminEmail);
-
     return NextResponse.json(
       { message: 'Emails sent successfully' },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error sending email:', error);
     return NextResponse.json(
       { message: 'Failed to send email' },
       { status: 500 }

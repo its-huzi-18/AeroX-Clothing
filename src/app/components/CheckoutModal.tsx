@@ -6,7 +6,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
 interface CheckoutModalProps {
-  cartItems: ProductType[]; // Ensure this matches the expected type
+  cartItems: ProductType[];
   onClose: () => void;
 }
 
@@ -19,9 +19,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
     city: "",
   });
 
-  // State to track selected sizes for each product using index
   const [selectedSizes, setSelectedSizes] = useState<string[]>(Array(cartItems.length).fill(""));
-
   const [paymentMethod, setPaymentMethod] = useState<"COD" | "Bank Deposit" | null>(null);
   const [orderCompleted, setOrderCompleted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -32,7 +30,6 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle size selection for each product using index
   const handleSizeChange = (index: number, size: string) => {
     const newSelectedSizes = [...selectedSizes];
     newSelectedSizes[index] = size;
@@ -47,7 +44,6 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate payment method and sizes
     if (!paymentMethod || selectedSizes.some((size) => !size)) {
       setErrorMessage("Please select a payment method and sizes for all products.");
       return;
@@ -56,22 +52,21 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
     setIsSubmitting(true);
     setErrorMessage(null);
 
-    // Prepare order details
     const orderDetails = {
       ...formData,
       cartItems: cartItems.map((item, index) => ({
-        title: item.title, // Ensure this is populated
-        selectedSize: selectedSizes[index], // Ensure this is populated
-        quantity: item.quantity, // Ensure this is populated
-        price: item.price, // Ensure this is populated
-        image: urlFor(item.image).url(), // Ensure this is populated
-        color: item.color, // Ensure this is populated
+        title: item.title,
+        selectedSize: selectedSizes[index],
+        quantity: item.quantity,
+        price: item.price,
+        image: urlFor(item.image).url(),
+        color: item.color,
       })),
       paymentMethod,
-      totalPrice: cartItems.reduce((total, item) => total + (item.price || 0) * item.quantity, 0) + 130,
+      subtotal: cartItems.reduce((total, item) => total + (item.price || 0) * item.quantity, 0),
+      shippingFee: 200,
+      totalPrice: cartItems.reduce((total, item) => total + (item.price || 0) * item.quantity, 0) + 200,
     };
-
-    console.log('Order Details:', JSON.stringify(orderDetails, null, 2)); // Log the data
 
     try {
       const response = await fetch('/api/checkout', {
@@ -88,7 +83,6 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
         setErrorMessage("Failed to send email. Please try again.");
       }
     } catch (error) {
-      console.error("Error sending email:", error);
       setErrorMessage("An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -154,7 +148,6 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
               <input type="text" name="city" value={formData.city} onChange={handleChange} className="w-full p-2 border rounded" required />
             </div>
 
-            {/* Size selection for each product using index */}
             {cartItems.map((item, index) => (
               <div key={index} className="mb-4">
                 <label className="block text-sm font-medium mb-1">Size for {item.title}</label>
@@ -222,9 +215,9 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
             ))}
             <div className="mt-4">
               <p className="text-sm text-gray-600">Subtotal: Rs {totalPrice}.00</p>
-              <p className="text-sm text-gray-600">Shipping: Rs 130.00</p>
+              <p className="text-sm text-gray-600">Shipping: Rs 200.00</p>
               <hr className="my-2" />
-              <p className="text-lg font-semibold">Total: Rs {totalPrice + 130}.00</p>
+              <p className="text-lg font-semibold">Total: Rs {totalPrice + 200}.00</p>
             </div>
           </div>
         </div>

@@ -39,24 +39,30 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!paymentMethod) {
-      setErrorMessage("Please select a payment method."); // Set error message
+      setErrorMessage("Please select a payment method.");
       return;
     }
-
-    setIsSubmitting(true); // Start loading
-    setErrorMessage(null); // Clear previous errors
-
+  
+    setIsSubmitting(true);
+    setErrorMessage(null);
+  
+    const subtotal = product.price * quantity;
+    const shippingFee = 200; // Fixed shipping fee
+    const totalPrice = subtotal + shippingFee;
+  
     const orderDetails = {
       ...formData,
       product: product.title,
       selectedSize,
       quantity,
       paymentMethod,
-      totalPrice: product.price * quantity + 130,
+      subtotal, // Add subtotal
+      shippingFee, // Add shipping fee
+      totalPrice, // Add total price
       image: urlFor(product.image).url(),
       color: product.color,
     };
-
+  
     try {
       const response = await fetch('/api/order', {
         method: 'POST',
@@ -65,17 +71,16 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
         },
         body: JSON.stringify(orderDetails),
       });
-
+  
       if (response.ok) {
         setOrderCompleted(true);
       } else {
-        setErrorMessage("Failed to send email. Please try again."); // Set error message
+        setErrorMessage("Failed to send email. Please try again.");
       }
     } catch (error) {
-      console.error("Error sending email:", error);
-      setErrorMessage("An error occurred. Please try again."); // Set error message
+      setErrorMessage("An error occurred. Please try again.");
     } finally {
-      setIsSubmitting(false); // Stop loading
+      setIsSubmitting(false);
     }
   };
 
@@ -185,9 +190,9 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
             </div>
             <div className="mt-4">
               <p className="text-sm text-gray-600">Subtotal: Rs {totalPrice}.00</p>
-              <p className="text-sm text-gray-600">Shipping: Rs 130.00</p>
+              <p className="text-sm text-gray-600">Shipping: Rs 200.00</p>
               <hr className="my-2" />
-              <p className="text-lg font-semibold">Total: Rs {totalPrice + 130}.00</p>
+              <p className="text-lg font-semibold">Total: Rs {totalPrice + 200}.00</p>
             </div>
           </div>
         </div>

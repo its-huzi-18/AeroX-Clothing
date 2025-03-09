@@ -61,12 +61,14 @@ const Cart = () => {
               {cartItems.map((item) => (
                 <div key={item.id} className="flex items-center border-b py-4">
                   <div className="w-28 p-4 h-28 relative">
+                    <Link href={`shirtDetail/${item.id}`}>
                     <Image
                       src={item.image ? urlFor(item.image).url() : '/path/to/fallback/image.jpg'}
                       alt={item.title}
                       layout="fill"
                       className="rounded"
-                    />
+                      />
+                      </Link>
                   </div>
                   <div className="ml-4 flex-1">
                     <h2 className="text-xl font-semibold">{item.title}</h2>
@@ -114,14 +116,14 @@ const Cart = () => {
                   </div>
                   <div className="flex justify-between">
                     <span>Shipping</span>
-                    <span>Free</span>
+                    <span>Rs.200.00</span>
                   </div>
                   <div className="flex justify-between font-bold">
                     <span>Total</span>
                     <span>
                       Rs.
                       {cartItems
-                        .reduce((total, item) => total + (item.price || 0) * item.quantity, 0)
+                        .reduce((total, item) => total + (item.price || 0) * item.quantity, 200)
                         .toFixed(2)}
                     </span>
                   </div>
