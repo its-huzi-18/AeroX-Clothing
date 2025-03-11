@@ -74,13 +74,13 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-2">
           <Account />
-          <div className="relative">
+          <div className="relative w-8 h-8">
             <span className="absolute top-[-6px] -right-[3px] w-4 h-4 bg-green-600 text-white rounded-full text-[12px] flex justify-center items-center">
               0
             </span>
             <CiStar className="text-[26px]" />
           </div>
-          <div className="relative">
+          <div className="relative w-8 h-8">
             {totalQuantity > 0 && (
               <span className="absolute top-[-7px] -right-[4px] w-[18px] h-[18px] bg-green-600 text-white rounded-full text-[11.2px] flex justify-center items-center">
                 {totalQuantity}
@@ -115,13 +115,13 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-8 md:gap-5">
           <Account />
-          <div className="relative">
+          <div className="relative w-8 h-8">
             <span className="absolute top-[-6px] -right-[3px] w-4 h-4 bg-green-600 text-white rounded-full text-[12px] flex justify-center items-center">
               0
             </span>
             <CiStar className="text-[30px]" />
           </div>
-          <div className="relative">
+          <div className="relative w-8 h-8">
             {totalQuantity > 0 && (
               <span className="absolute top-[-7px] -right-[4px] w-[18px] h-[18px] bg-green-600 text-white rounded-full text-[11.2px] flex justify-center items-center">
                 {totalQuantity}
@@ -149,7 +149,7 @@ const Header = () => {
           ))}
         </ul>
         <div className="flex gap-1 md:mt-0 -mt-2 items-center md:order-1 order-1">
-          <Image src="/Images/fire.png" width={22} height={22} alt="fire" />
+          <Image src="/Images/fire.png" width={22} height={22} alt="fire" priority />
           <p className="font-medium">
             Extra <span className="font-semibold text-[#2EBB77]">Sale 30%</span> off
           </p>
