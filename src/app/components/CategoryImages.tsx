@@ -19,7 +19,7 @@ const CategoryImages: React.FC<ImageSrcProps> = ({ imageSrc,alt,width = 150,heig
           animate={{ rotateY: 20 }}
           transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
           whileHover={{ scale: 1.1, rotateY: 0 }}
-          className="w-[210px] h-[210px]  rounded-full bg-gradient-to-br from-gray-200 to-gray-300 shadow-xl shadow-gray-400 hover:shadow-2xl hover:shadow-gray-500 transition-all duration-300 ease-out hover:ring-4 hover:ring-gray-300 flex items-center justify-center"
+          className="w-[140px] p-6 md:p-0 h-[140px] md:w-[210px] md:h-[210px]  rounded-full bg-gradient-to-br from-gray-200 to-gray-300 shadow-xl shadow-gray-400 hover:shadow-2xl hover:shadow-gray-500 transition-all duration-300 ease-out hover:ring-4 hover:ring-gray-300 flex items-center justify-center"
           style={{ perspective: "1000px" }} // Adds a 3D effect
         >
           {isLoading && (

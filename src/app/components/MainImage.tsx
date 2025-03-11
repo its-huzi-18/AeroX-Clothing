@@ -8,7 +8,7 @@ interface ImageTittle {
 
 const MainImage: React.FC<ImageTittle> = ({ title }) => {
   return (
-    <div className="mt-10 relative h-[340px] mx-10 flex justify-center items-center">
+    <div className="mt-10 relative h-[250px] rounded-sm md:h-[340px] mx-4 md:mx-10 flex justify-center items-center">
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0">
         <Image

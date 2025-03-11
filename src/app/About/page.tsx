@@ -39,14 +39,13 @@ const AboutPage = () => {
           </div>
 
           {/* Right Section - Model Image */}
-          <AnimatedCard width="600px" height="384px">
-            <div className="relative h-96 w-full">
+          <AnimatedCard width="auto" height="auto">
+            <div className="relative w-[330px] h-[380px] md:w-[570px]">
               <Image
                 src="/Images/aboutUs.png" // Ensure this path is correct
                 alt="Aerox Model"
                 layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg object-fill md:object-cover"
               />
             </div>
           </AnimatedCard>

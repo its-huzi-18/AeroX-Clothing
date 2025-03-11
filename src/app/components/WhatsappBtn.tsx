@@ -21,7 +21,7 @@ const WhatsAppButton = () => {
       href="https://wa.me/+923470670936"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 right-5 bg-green-500 p-3 rounded-full shadow-lg animate-bounce hover:bg-green-600 transition"
+      className="fixed bottom-5  md:right-5 bg-green-500 p-3 rounded-full shadow-lg animate-bounce hover:bg-green-600 transition"
     >
       <IoLogoWhatsapp className="text-white text-2xl" />
     </a>

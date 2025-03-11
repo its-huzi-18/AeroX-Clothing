@@ -16,14 +16,16 @@ const NewArrival = () => {
   return (
     <>
       <div className="flex mt-16 mb-10  gap-3 flex-col justify-center items-center">
-        <div className="flex justify-center items-center gap-10">
-          <div className="w-48 h-[3px] bg-black"></div>
-          <h2 className="text-3xl font-bold">NEW ARRIVALS</h2>
-          <div className="w-48 h-[3px] bg-black"></div>
-        </div>
-        <button className="text-xl  border-b-2 border-black/70">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-10 mx-4 md:mx-10">
+  <div className="w-28 md:w-48 h-[3px] bg-black"></div>
+  <h2 className="text-3xl text-center md:text-start font-bold whitespace-nowrap">NEW ARRIVALS</h2>
+  <div className="w-28 md:w-48  h-[3px] bg-black"></div>
+</div>
+        <Link href={"/Shop"}>
+        <button className="text-xl mt-2 md:mt-0 border-b-2 border-black/70">
           View All
         </button>
+        </Link>
       </div>
       <div className="flex justify-center gap-7 my-8 flex-wrap items-center">
           {detail.map((data,id)=>(
@@ -45,21 +47,22 @@ const NewArrival = () => {
         </div>
         ))}
         </div>
-      <div className="relative md:mt-24 mb-20 flex justify-center items-center">
+      <div className="relative md:mt-24 mt-10 mx-2 rounded-lg mb-10 md:mb-20 flex justify-center items-center">
         <Image
+        className="md:h-auto h-[300px]"
           src={"/Images/shirt-collections.png"}
           width={1200}
           height={400}
           alt="shirt-collection"
         />
-        <div className="absolute left-[20%] top-[45%]">
+        <div className="absolute left-[10%] md:left-[20%] top-[45%]">
           <Link href={"/Shop"}>
             <GlowingButton />
           </Link>
         </div>
-        <div className="absolute top-[80%] left-[22%] flex flex-col justify-center items-center">
+        <div className="absolute top-[77.2%] md:top-[80%] left-[18.6%] md:left-[22%] flex flex-col justify-center items-center">
           <SocialMedia />
-          <h2 className="text-white font-medium text-[17px] tracking-wider">
+          <h2 className="text-white font-medium text-[11px] md:text-[17px] tracking-wider">
             Follow us
           </h2>
         </div>

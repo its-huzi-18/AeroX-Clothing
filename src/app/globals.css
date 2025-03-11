@@ -72,9 +72,6 @@ body {
 }
 /* styles.css */
 .animated-header {
-  font-size: 3rem;
-  font-weight: 600;
-  margin: 2.2rem 0;
   position: relative;
   display: inline-block;
   color: #333; /* Initial text color */

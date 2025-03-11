@@ -62,13 +62,13 @@ const Cart = () => {
                 <div key={item.id} className="flex items-center border-b py-4">
                   <div className="w-28 p-4 h-28 relative">
                     <Link href={`shirtDetail/${item.id}`}>
-                    <Image
-                      src={item.image ? urlFor(item.image).url() : '/path/to/fallback/image.jpg'}
-                      alt={item.title}
-                      layout="fill"
-                      className="rounded"
+                      <Image
+                        src={item.image ? urlFor(item.image).url() : '/path/to/fallback/image.jpg'}
+                        alt={item.title}
+                        layout="fill"
+                        className="rounded"
                       />
-                      </Link>
+                    </Link>
                   </div>
                   <div className="ml-4 flex-1">
                     <h2 className="text-xl font-semibold">{item.title}</h2>
@@ -101,7 +101,7 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <div className="bg-gray-50 fixed bottom-4 right-2 w-[27rem] h-[20rem] p-6 rounded-lg shadow-md shadow-gray-400">
+            <div className="md:fixed md:bottom-4 md:right-2 md:w-[27rem] md:h-[20rem] bg-gray-50 p-6 rounded-lg shadow-md shadow-gray-400">
               <div className="mt-5">
                 <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
                 <div className="space-y-6">

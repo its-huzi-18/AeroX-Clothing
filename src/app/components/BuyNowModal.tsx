@@ -105,9 +105,9 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-full max-w-4xl flex gap-8 relative max-h-[90vh] overflow-y-auto">
-        <button
+<div className="z-20 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+<div className="bg-white p-6 rounded-lg w-full max-w-4xl flex flex-col md:flex-row gap-8 relative max-h-[90vh] overflow-y-auto">
+          <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
         >
@@ -116,7 +116,7 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
           </svg>
         </button>
 
-        <div className="w-1/2 max-h-[80vh] overflow-y-auto pr-4">
+        <div className="w-full md:w-1/2 max-h-[80vh] overflow-y-auto pr-4">
           <div className="flex justify-center mb-4">
             <Image src="/Images/logo.png" alt="Aerox Logo" width={120} height={70} className="object-contain" />
           </div>
@@ -173,8 +173,8 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
           </form>
         </div>
 
-        <div className="w-1/2 max-h-[80vh] overflow-y-auto">
-          <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+        <div className="w-full z-20 md:w-1/2 max-h-[80vh] overflow-hidden md:overflow-y-auto">
+        <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
           <div className="bg-gray-100 p-4 rounded-lg">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-24 h-28 p-3 bg-white rounded-lg flex items-center object-cover justify-center">

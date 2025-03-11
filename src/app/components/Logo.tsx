@@ -18,6 +18,7 @@ export default function Logo() {
       className="w-[100px] h-[100px] flex justify-center items-center rounded-full"
     >
       <Image
+      className="md:w-auto md:h-auto w-[80px] h-[75px]"
         src={"/Images/logo.png"}
         width={120}
         height={120}

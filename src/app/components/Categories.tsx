@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { useRouter } from "next/navigation";
 import CategoryImages from "./CategoryImages";
@@ -16,8 +15,8 @@ const Categories = () => {
 
   return (
     <div>
-      <h2 className="animated-header">Shopping By Categories</h2>
-      <div className="flex justify-center gap-8">
+      <h2 className="animated-header md:text-[3rem] text-[28px] font-bold  my-[2.2rem] ml-4 md:ml-0">Shopping By Categories</h2>
+      <div className="flex flex-wrap md:flex-nowrap justify-center gap-8">
         {/* Drifit T-shirts */}
         <div
           className="flex flex-col gap-4 items-center cursor-pointer"

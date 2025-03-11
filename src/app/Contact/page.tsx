@@ -44,7 +44,7 @@ export default function Contact() {
   
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center p-4 md:p-8">
       <Head>
         <title>Contact Us - Aerox Shirt</title>
         <meta name="description" content="Contact Aerox Shirt for any inquiries or support." />
@@ -52,7 +52,7 @@ export default function Contact() {
 
       <div className="bg-white rounded-lg shadow-2xl overflow-hidden w-full max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* Image Section */}
-        <div className="w-full md:w-[600px] p-8 relative h-72 md:h-auto">
+        <div className="hidden md:block w-full md:w-[600px] p-8 relative h-72 md:h-auto">
           <Image
             src="/Images/contact-model.png"
             alt="Contact Us"

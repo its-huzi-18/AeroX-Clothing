@@ -13,18 +13,18 @@ interface GlowingButtonProps {
 }
 
 export default function GlowingButton({
-  width = "150px",
-  height = "50px",
+  width = "md:w-[150px] w-[95px] h-[35px]",
+  height = "md:h-[50px]",
   text = "Shop Now",
   color = "bg-gray-100",
   textColor = "text-black",
-  textSize = "text-lg",
+  textSize = "md:text-lg text-base",
   shadow = "0px 0px 15px rgba(255, 255, 255, 0.5)", // Default shadow
 }: GlowingButtonProps) {
   return (
     <motion.button
-      className={`relative flex justify-center items-center ${textSize} font-semibold rounded-lg ${color} ${textColor}`}
-      style={{ width, height, boxShadow: shadow }} // Apply custom shadow
+      className={`${height} ${width} relative flex justify-center items-center ${textSize} font-semibold rounded-lg ${color} ${textColor}`}
+      style={{boxShadow: shadow }} // Apply custom shadow
       initial={{ boxShadow: shadow }}
       animate={{
         boxShadow: [

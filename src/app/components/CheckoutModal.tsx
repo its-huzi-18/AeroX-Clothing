@@ -110,8 +110,8 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-full max-w-4xl flex gap-8 relative max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div className="bg-white p-6 rounded-lg w-full max-w-4xl flex flex-col md:flex-row gap-8 relative max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
@@ -121,7 +121,8 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
           </svg>
         </button>
 
-        <div className="w-1/2 max-h-[80vh] overflow-y-auto pr-4">
+        {/* Form Section */}
+        <div className="w-full md:w-1/2">
           <div className="flex justify-center mb-4">
             <Image src="/Images/logo.png" alt="Aerox Logo" width={120} height={70} className="object-contain" />
           </div>
@@ -196,7 +197,8 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
           </form>
         </div>
 
-        <div className="w-1/2 max-h-[80vh] overflow-y-auto">
+        {/* Order Summary Section */}
+        <div className="w-full md:w-1/2">
           <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
           <div className="bg-gray-100 p-4 rounded-lg">
             {cartItems.map((item, index) => (
