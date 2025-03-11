@@ -23,8 +23,8 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
 
   const [paymentMethod, setPaymentMethod] = useState<"COD" | "Bank Deposit" | null>(null);
   const [orderCompleted, setOrderCompleted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null); // For error messages
-  const [isSubmitting, setIsSubmitting] = useState(false); // For loading state
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -33,7 +33,7 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
 
   const handlePaymentMethodChange = (method: "COD" | "Bank Deposit") => {
     setPaymentMethod(method);
-    setErrorMessage(null); // Clear error when a payment method is selected
+    setErrorMessage(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,27 +42,27 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
       setErrorMessage("Please select a payment method.");
       return;
     }
-  
+
     setIsSubmitting(true);
     setErrorMessage(null);
-  
+
     const subtotal = product.price * quantity;
     const shippingFee = 200; // Fixed shipping fee
     const totalPrice = subtotal + shippingFee;
-  
+
     const orderDetails = {
       ...formData,
       product: product.title,
       selectedSize,
       quantity,
       paymentMethod,
-      subtotal, // Add subtotal
-      shippingFee, // Add shipping fee
-      totalPrice, // Add total price
+      subtotal,
+      shippingFee,
+      totalPrice,
       image: urlFor(product.image).url(),
       color: product.color,
     };
-  
+
     try {
       const response = await fetch('/api/order', {
         method: 'POST',
@@ -71,7 +71,7 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
         },
         body: JSON.stringify(orderDetails),
       });
-  
+
       if (response.ok) {
         setOrderCompleted(true);
       } else {
@@ -105,9 +105,9 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
   }
 
   return (
-<div className="z-20 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-<div className="bg-white p-6 rounded-lg w-full max-w-4xl flex flex-col md:flex-row gap-8 relative max-h-[90vh] overflow-y-auto">
-          <button
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div className="bg-white p-6 rounded-lg w-full max-w-4xl flex flex-col md:flex-row gap-8 relative max-h-[90vh] overflow-y-auto">
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
         >
@@ -116,7 +116,8 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
           </svg>
         </button>
 
-        <div className="w-full md:w-1/2 max-h-[80vh] overflow-y-auto pr-4">
+        {/* Form Section */}
+        <div className="w-full md:w-1/2">
           <div className="flex justify-center mb-4">
             <Image src="/Images/logo.png" alt="Aerox Logo" width={120} height={70} className="object-contain" />
           </div>
@@ -154,7 +155,6 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
                   <span>Bank Deposit</span>
                 </label>
               </div>
-              {/* Error message below payment options */}
               {errorMessage && (
                 <p className="text-red-600 text-sm mt-2">{errorMessage}</p>
               )}
@@ -173,8 +173,9 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
           </form>
         </div>
 
-        <div className="w-full z-20 md:w-1/2 max-h-[80vh] overflow-hidden md:overflow-y-auto">
-        <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+        {/* Order Summary Section */}
+        <div className="w-full md:w-1/2">
+          <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
           <div className="bg-gray-100 p-4 rounded-lg">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-24 h-28 p-3 bg-white rounded-lg flex items-center object-cover justify-center">
