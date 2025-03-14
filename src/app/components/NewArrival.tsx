@@ -49,8 +49,8 @@ const NewArrival = () => {
         </div>
       <div className="relative md:mt-24 mt-10 mx-2 rounded-lg mb-10 md:mb-20 flex justify-center items-center">
         <Image
-        className="md:h-auto h-[300px]"
-          src={"/Images/shirt-collections.png"}
+      className="md:h-auto h-[250px]"
+          src={"/Images/bottomShops.png"}
           width={1200}
           height={400}
           alt="shirt-collection"

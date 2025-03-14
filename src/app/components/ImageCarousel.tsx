@@ -35,14 +35,14 @@ const ImageCarousel = () => {
       <div className='overflow-hidden rounded-lg shadow-xl'>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index} className='relative px-4 md:px-0 md:h-[400px]'>
+            <div key={index} className='relative px-4 md:px-0 h-[210px] w-full md:h-[400px]'>
               <Image
                 quality={100}
                 src={image}
                 alt={`Slide ${index}`}
                 width={1920} // Ensure explicit width
                 height={1080} // Ensure explicit height
-                className='rounded-md h-[250px] md:h-auto'
+                className='rounded-md h-[210px] md:h-auto'
                 priority={index === 0} // Prioritize the first image
                 loading={index === 0 ? 'eager' : 'lazy'} // Lazy load other images
               />

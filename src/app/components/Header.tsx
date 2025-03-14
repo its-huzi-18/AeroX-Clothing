@@ -82,7 +82,7 @@ const Header = () => {
           </div>
           <div className="relative w-8 h-8">
             {totalQuantity > 0 && (
-              <span className="absolute top-[-7px] -right-[4px] w-[18px] h-[18px] bg-green-600 text-white rounded-full text-[11.2px] flex justify-center items-center">
+              <span className="absolute top-[-7px] -right-[3.5px] w-[18px] h-[18px] bg-green-600 text-white rounded-full text-[11.2px] flex justify-center items-center">
                 {totalQuantity}
               </span>
             )}
