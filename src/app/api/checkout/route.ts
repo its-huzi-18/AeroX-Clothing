@@ -37,7 +37,9 @@ export async function POST(request: Request) {
     } = (await request.json()) as OrderDetails;
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.hostinger.com', // SMTP server
+      port: 465, // SMTP port for SSL
+      secure: true, // Use SSL
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
@@ -70,7 +72,6 @@ export async function POST(request: Request) {
       to: email,
       subject: 'Order Confirmation',
       html: `
-        <img src="https://aerox-clothing.vercel.app/Images/logo.png" alt="Aerox Logo" style="width: 150px;">
         <h1>Thank you for your order, ${name}!</h1>
         <p>Your order has been placed successfully.</p>
         <h2>Order Details</h2>
@@ -89,14 +90,12 @@ export async function POST(request: Request) {
         </h3>
       `,
     };
-
     // Email content for the admin
     const adminMailOptions = {
       from: `Aerox <${process.env.EMAIL_USER}>`,
       to: adminEmail,
       subject: 'New Order Received',
       html: `
-        <img src="https://aerox-clothing.vercel.app/Images/logo.png" alt="Aerox Logo" style="width: 150px;">
         <h1>New Order Received</h1>
         <p>You have received a new order from ${name}.</p>
         <h2>Order Details</h2>

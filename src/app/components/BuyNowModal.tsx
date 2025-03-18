@@ -163,7 +163,7 @@ const BuyNowModal: React.FC<BuyNowModalProps> = ({ product, selectedSize, quanti
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-blue-500 text-white p-2 rounded ${
+                className={`w-full bg-blue-500 text-white p-2 mb-2 rounded ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600"
                 }`}
               >

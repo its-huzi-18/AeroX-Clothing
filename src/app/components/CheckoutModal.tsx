@@ -187,7 +187,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-blue-500 text-white p-2 rounded ${
+                className={`w-full bg-blue-500 text-white mb-2 p-2 rounded ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600"
                 }`}
               >

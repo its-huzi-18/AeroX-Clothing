@@ -3,8 +3,10 @@ import nodemailer from "nodemailer";
 
 // Your email credentials (Use environment variables in production)
 const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
+  host: 'smtp.hostinger.com', // SMTP server
+  port: 465, // SMTP port for SSL
+  secure: true, // Use SSL 
+ auth: {
     user: process.env.EMAIL_USER, // Your email (e.g., "your-email@gmail.com")
     pass: process.env.EMAIL_PASSWORD, // Your email app password
   },
@@ -24,7 +26,7 @@ export async function POST(req: Request) {
         subject: "New Subscription – Aerox",
         html: `
           <div style="font-family: Arial, sans-serif; padding: 20px; text-align: center;">
-            <img src="https://aerox-clothing.vercel.app/Images/logo.png" alt="Aerox Logo" style="width: 150px;">
+            <img src="/Images/logo.png" alt="Aerox Logo" style="width: 150px;">
             <h2 style="color: #000;">Exciting News!</h2>
             <p style="font-size: 16px; color: #333;">
               A new user has subscribed to <strong>Aerox</strong>.
