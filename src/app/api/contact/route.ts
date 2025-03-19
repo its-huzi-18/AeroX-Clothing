@@ -23,8 +23,10 @@ export async function POST(request: Request) {
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
+      host: 'smtp.hostinger.com', // SMTP server
+      port: 465, // SMTP port for SSL
+      secure: true, // Use SSL
+     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
       },
