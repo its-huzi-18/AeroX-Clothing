@@ -174,10 +174,10 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ cartItems, onClose }) => 
                   <input type="radio" name="payment" value="COD" checked={paymentMethod === "COD"} onChange={() => handlePaymentMethodChange("COD")} className="form-radio" />
                   <span>Cash on Delivery (COD)</span>
                 </label>
-                <label className="flex items-center gap-2">
+                {/* <label className="flex items-center gap-2">
                   <input type="radio" name="payment" value="Bank Deposit" checked={paymentMethod === "Bank Deposit"} onChange={() => handlePaymentMethodChange("Bank Deposit")} className="form-radio" />
                   <span>Bank Deposit</span>
-                </label>
+                </label> */}
               </div>
               {errorMessage && (
                 <p className="text-red-600 text-sm mt-2">{errorMessage}</p>
