@@ -26,7 +26,6 @@ export async function POST(req: Request) {
         subject: "New Subscription – Aerox",
         html: `
           <div style="font-family: Arial, sans-serif; padding: 20px; text-align: center;">
-            <img src="/Images/logo.png" alt="Aerox Logo" style="width: 150px;">
             <h2 style="color: #000;">Exciting News!</h2>
             <p style="font-size: 16px; color: #333;">
               A new user has subscribed to <strong>Aerox</strong>.
