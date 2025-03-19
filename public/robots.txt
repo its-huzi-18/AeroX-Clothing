@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://aeroxwear.com
+
+# Sitemaps
+Sitemap: https://aeroxwear.com/sitemap.xml
